@@ -1,13 +1,15 @@
 //IMPLEMENTAZIONE DEI METODI SPECIFICATI NEL FILE DI HEADER
 #include "coordinate.hpp"
 #include "player.hpp"
+#include "classematrice.hpp"
+
 //COSTRUTTORE
 player :: player(){
   score = 0;
   coords = new coordinate();
   auto = 'A';
 }
-//GETTER
+//GETTER E SETTER DELLE COORDINATE
 int player :: get_x(){
   return coords.x;
 }
@@ -18,12 +20,8 @@ int player :: get_y(){
 
 //FUNCTION PLAYER CONTROL
 void player :: move(char dir){
-  if(dir == 'w'){
-    coords.inc_y();
-  }else if(dir == 'a'){
+  if(dir == 'a'){
     coords.dec_x();
-  }else if(dir == 's'){
-    coords.dec_y();
   }else if(dir == 'd'){
     coords.inc_x();
   }
@@ -37,9 +35,12 @@ void player :: move(char dir){
     score += incr;
   }
   //scalo punteggio
-
+  void player :: dec_score(int malus){
+    score -= malus;
+    if(score < 0) death();
+  }
 
   //funzione di MORTE
   void player :: death(){
-    //da implementare
+
   }
