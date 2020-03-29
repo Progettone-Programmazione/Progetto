@@ -1,5 +1,4 @@
 // HEADER FILE - player.hpp
-
 #include "object.hpp"
 
 #define SCORE 100

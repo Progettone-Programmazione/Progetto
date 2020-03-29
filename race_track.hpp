@@ -1,6 +1,6 @@
 // HEADER FILE - race_track.hpp
 
-#include "coordinates.hpp"
+#include "coordinate.hpp"
 
 #define ROWS 10
 #define COLUMNS 10
@@ -8,7 +8,7 @@
 class race_track {
 protected:
     char matrix[ROWS][COLUMNS+2];
-    coordinates player_coords;
+    coordinate player_coords;
     bool plus;
 
 public:
@@ -27,7 +27,7 @@ public:
     // Come migliorare:
     // - trovare un modo per passare l'oggetto al posto delle coordinate e del simbolo
     //   in questo modo, ad esempio, si può verificare che l'oggetto sia un player e aggiornare le player_coords
-    void update_object(coordinates coords, char symbol);
-    void delete_object(coordinates coords);
-    void update_player(coordinates coords, char symbol);
+    void update_object(coordinate coords, char symbol);
+    void delete_object(coordinate coords);
+    void update_player(coordinate coords, char symbol);
 };

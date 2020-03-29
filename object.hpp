@@ -1,13 +1,14 @@
 // HEADER FILE - object.hpp
 
 #include "race_track.hpp"
+#include "coordinate.hpp"
 
 class object {
 protected:
     char symbol;
-    coordinates coords;
+    coordinate coords;
     race_track *track;
 public:
     // Constructor
-    object(char symbol, coordinates coords, race_track *track);
+    object(char symbol, coordinate coords, race_track *track);
 };

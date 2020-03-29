@@ -18,3 +18,10 @@ void coordinate :: dec_x(){
 void coordinate :: dec_y(){
   if(y > 1) y -= 1;
 }
+int coordinate::get_x() {
+    return x;
+}
+
+int coordinate::get_y() {
+    return y;
+}

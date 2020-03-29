@@ -13,5 +13,8 @@ class coordinate{
     //FUNZIONI PER DECREMENTARE COORDINATE
     void dec_x();
     void dec_y();
+    //getter
+    int get_x();
+    int get_y();
 
 };

@@ -27,15 +27,15 @@ void race_track::print_matrix() {
     }
 }
 
-void race_track::update_object(coordinates coords, char symbol) {
+void race_track::update_object(coordinate coords, char symbol) {
     matrix[coords.get_y()][coords.get_x()] = symbol;
 }
 
-void race_track::delete_object(coordinates coords) {
+void race_track::delete_object(coordinate coords) {
     matrix[coords.get_y()][coords.get_x()] = ' ';
 }
 
-void race_track::update_player(coordinates coords, char symbol) {
+void race_track::update_player(coordinate coords, char symbol) {
     update_object(coords, symbol);
     player_coords = coords;
 }
