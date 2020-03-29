@@ -66,4 +66,4 @@ void race_track::update_matrix() {
             }
         }
     }
-};
+}
