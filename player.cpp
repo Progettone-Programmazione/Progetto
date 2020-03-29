@@ -1,14 +1,11 @@
 //IMPLEMENTAZIONE DEI METODI SPECIFICATI NEL FILE DI HEADER
-#include "coordinate.hpp"
 #include "player.hpp"
-#include "classematrice.hpp"
 
 //COSTRUTTORE
-player :: player(){
-  score = 0;
-  coords = new coordinate();
-  auto = 'A';
+player::player(race_track *track) : object('@', coordinate(COLUMNS / 2, ROWS / 2), track) {
+    track->update_player(coords, symbol);
 }
+
 //GETTER E SETTER DELLE COORDINATE
 int player :: get_x(){
   return coords.x;
@@ -19,12 +16,18 @@ int player :: get_y(){
 }
 
 //FUNCTION PLAYER CONTROL
-void player :: move(char dir){
-  if(dir == 'a'){
-    coords.dec_x();
-  }else if(dir == 'd'){
-    coords.inc_x();
+void player :: move(char key){
+  if(key == 'd') {
+      track->delete_object(coords);
+      coords.inc_x();
+      track->update_player(coords, symbol);
   }
+  else if(key == 'a') {
+      track->delete_object(coords);
+      coords.dec_x();
+      track->update_player(coords, symbol);
+  }
+}
 
   //getter del punteggio
   int player :: get_score(){
