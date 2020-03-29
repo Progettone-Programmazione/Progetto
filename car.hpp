@@ -1,6 +1,6 @@
 // HEADER FILE - car.hpp
 
-#include "coordinate.hpp"
+#include "obstacle.hpp"
 
 class car : public obstacle {
   protected:

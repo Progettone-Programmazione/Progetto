@@ -1,5 +1,4 @@
 //FILE HEADER DI COORDINATE
-
 class coordinate{
   protected:
     int x;
