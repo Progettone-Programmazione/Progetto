@@ -5,10 +5,14 @@
 #define ROWS 10
 #define COLUMNS 10
 
+#define LENGTH 10
+
 class race_track {
 protected:
     char matrix[ROWS][COLUMNS+2];
-    coordinate player_coords;
+    // coordinate player_coords;
+    obstacle interazione[LENGTH];
+    car macchine[LENGTH];
     bool plus;
 
 public:

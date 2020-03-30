@@ -7,11 +7,11 @@ class coordinate{
     //COSTRUTTORE COORDINATE
     coordinate(int x, int y);
     //FUNZIONI PER INCREMENTARE COORDINATE
-    void inc_x();
-    void inc_y();
+    coordinate inc_x();
+    coordinate inc_y();
     //FUNZIONI PER DECREMENTARE COORDINATE
-    void dec_x();
-    void dec_y();
+    coordinate dec_x();
+    coordinate dec_y();
     //getter
     int get_x();
     int get_y();

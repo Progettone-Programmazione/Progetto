@@ -6,17 +6,21 @@ coordinate::coordinate(int x, int y){
   this -> y = y;
 }
 
-void coordinate :: inc_x(){
+coordinate coordinate :: inc_x(){
   x += 1;
+  return *this;
 }
-void coordinate :: inc_y(){
+coordinate coordinate :: inc_y(){
   y += 1;
+  return *this;
 }
-void coordinate :: dec_x(){
+coordinate coordinate :: dec_x(){
   if(x > 1) x -= 1;
+  return *this;
 }
-void coordinate :: dec_y(){
+coordinate coordinate :: dec_y(){
   if(y > 1) y -= 1;
+  return *this;
 }
 int coordinate::get_x() {
     return x;

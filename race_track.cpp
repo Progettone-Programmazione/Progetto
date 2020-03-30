@@ -43,7 +43,7 @@ void race_track::update_player(coordinate coords, char symbol) {
 // La fila d'attesa com'è implementata?
 // Come aggiornare le coordinate degli altri oggetti?
 // Bisogna fare in modo che vengano modificati solo i caratteri che si sono mossi
-void race_track::update_matrix() {
+/*void race_track::update_matrix() {
     for(int i = ROWS - 1; i >= 0; i--) {
         for(int j = 0; j < COLUMNS + 2; j++) {
             if (!(i == player_coords.get_y() && j == player_coords.get_x())) {
@@ -66,4 +66,30 @@ void race_track::update_matrix() {
             }
         }
     }
+}*/
+
+void race_track::update_matrix() {
+  for(int i = 0; i < LENGTH; i++)
+  {
+    ostacoli[i].inc_y_coords();
+    delete_object(ostacoli[i].get_coords());
+    update_object(ostacoli[i].get_coords(), ostacoli[i].get_shape());
+  }
+
+  for(int i = 0; i > LENGTH; i++) {
+    coordinate coords = macchine[i].get_coords();
+    delete_object(coords.inc_x());
+    delete_object(coords.dec_x());
+    delete_object(coords.inc_y());
+    delete_object(coords.dec_y());
+    update_object((coords.inc_x()).inc_y(), "#");
+    update_object((coords.dec_x()).inc_y(), "#");
+    update_object((coords.inc_y()).inc_y(), "#");
+    update_object((coords.dec_y()).inc_y(), "#");
+
+    // sposta la macchina
+    macchine[i].move();
+    update_object(macchine[i].get_coords(), macchine[i].get_shape());
+
+  }
 }

@@ -5,5 +5,5 @@ car::car():obstacle(shape, damage, coords) {
 }
 
 void car::move() {
-  
+  coords.inc_y();
 }
