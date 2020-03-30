@@ -1,6 +1,7 @@
 // HEADER FILE - race_track.hpp
 
 #include "coordinate.hpp"
+#include "obstacle.hpp"
 
 #define ROWS 10
 #define COLUMNS 10
